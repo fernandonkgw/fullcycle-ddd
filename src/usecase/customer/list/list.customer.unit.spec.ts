@@ -23,7 +23,7 @@ const MockRepositowy = () => {
 
 describe("Unit test for listing customer use case", () => {
 
-    it("should list a customer", async () => {
+    it("should list customers", async () => {
         const repository = MockRepositowy();
         const useCase = new ListCustomerUseCase(repository)
 
