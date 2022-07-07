@@ -1,3 +1,4 @@
+import ProductFactory from "../factory/product.factory";
 import Product from "./product";
 
 describe("Product unit tests", () => {
@@ -19,6 +20,12 @@ describe("Product unit tests", () => {
             let product = new Product("p1", "Product 1", -1);
         }).toThrowError("product: Price must be greater than zero");
     });
+
+    it("should throw two errors when Name is empty and Price less than zero", () => {
+        expect(() => {
+            ProductFactory.create("", -1);
+        }).toThrowError("product: Name is required,product: Price must be greater than zero");
+    })
 
     it("should change name", () => {
         const product = new Product("p1", "Product 1", 100);
